@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="SuiteVisorWeb">
+
+  <test name="TestCategoria" enabled="false">
+    <classes>
+      <class name="pe.visorweb.categoria.CategoriaTest" />
+    </classes>
+  </test>
+  
+  <test name="TestCategoriaPom" enabled="false">
+    <classes>
+      <class name="pe.visorweb.categoria.CategoriaPomTest" />
+    </classes>
+  </test>
+  
+  <test name="TestCategoriaPomDataProvider">
+    <parameter name="rutaArchivo" value="c:\\TestCase\\TestCaseCategoria.xlsx"/>
+    <parameter name="fuenteDatos" value="EXCEL"/>
+    <classes>
+      <class name="pe.visorweb.categoria.CategoriaPomDataProviderTest" />
+    </classes>
+  </test>  
+  
+</suite>
+ 
