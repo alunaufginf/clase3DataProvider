@@ -65,7 +65,7 @@ public class CategoriaPomTest {
 		mantenimientoCategoriaPage = bienvenidaPage.irMantenimientoCategoria();
 		registrarCategoriaPage = mantenimientoCategoriaPage.cargarPaginaRegistrarCategoria();
 		
-		String mensajeEsperado = "Nombre: Error de validación: se necesita un valor.";
+		String mensajeEsperado = "Se guardó de manera correcta la Categoría";
 		String mensajeObtenido = registrarCategoriaPage.registrarCategoria("");
 		assertEquals(mensajeObtenido, mensajeEsperado);
 

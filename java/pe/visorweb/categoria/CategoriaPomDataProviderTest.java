@@ -7,7 +7,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pe.visorweb.dataprovider.CategoriaDataProvider;
+import pe.visorweb.data.provider.CategoriaDataProvider;
 import pe.visorweb.driver.CrearDriver;
 import pe.visorweb.driver.tipos.Navegador;
 import pe.visorweb.page.BienvenidaPage;
@@ -34,23 +34,22 @@ public class CategoriaPomDataProviderTest {
 		driver.close();
 	}
 	
-	@Test(dataProvider = "datosRegistrarCategoria", dataProviderClass = CategoriaDataProvider.class)
-  	public void testInsertarCategoriaExitosa(
-			String usuario,
-			String clave,
-			String nombreCategoria,
-			String mensajeEsperado) {
-		
+	@Test( dataProvider = "datosRegistrarCategoria", dataProviderClass = CategoriaDataProvider.class )
+  	public void testInsertarCategoria(
+  			String usuario,
+  			String clave,
+  			String nombreCategoria,
+  			String mensajeEsperado) {
 		
 		loginPage = new LoginPage(driver, url);
 		loginPage.cargarPaginaLogin();
-		loginPage.iniciarSesion("admin", "clave");
+		loginPage.iniciarSesion(usuario, clave);
 		
-		bienvenidaPage = loginPage.getBienvenidaPage();
 		mantenimientoCategoriaPage = loginPage.getBienvenidaPage().irMantenimientoCategoria();
 		registrarCategoriaPage = mantenimientoCategoriaPage.cargarPaginaRegistrarCategoria();
 		
 		String mensajeObtenido = registrarCategoriaPage.registrarCategoria(nombreCategoria);
+		
 		assertEquals(mensajeObtenido, mensajeEsperado);
 		
 	}

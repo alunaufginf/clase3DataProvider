@@ -45,7 +45,7 @@ public class EditarCategoriaPomTest {
 		mantenimientoCategoriaPage = bienvenidaPage.irMantenimientoCategoria();
 		
 		editarCategoriaPage = mantenimientoCategoriaPage
-									.cargarPaginaEditarCategoria("KENSEL");
+									.cargarPaginaEditarCategoria("CATEGORIA SELENIUM");
 		
 		try {
 			Thread.sleep(3000);
